@@ -1417,11 +1417,27 @@ body.is-preload #bg:before {
 }
 
 #header .logo {
-  width: 5.5rem;
-  height: 5.5rem;
-  line-height: 5.5rem;
-  border: solid 1px #ffffff;
-  border-radius: 100%;
+    width: 5.5rem;
+    height: 5.5rem;
+    border: solid 1px #ffffff;
+    border-radius: 50%;
+    /* déjà correct */
+
+    display: flex;
+    /* ajouté */
+    justify-content: center;
+    /* centre horizontalement */
+    align-items: center;
+    /* centre verticalement */
+
+    line-height: normal;
+    /* optionnel : plus besoin de line-height pour centrer */
+}
+#header .logo img {
+    width: 2.5rem;
+    /* ajuste selon la taille souhaitée */
+    height: 2.5rem;
+    object-fit: contain;
 }
 
 #header .logo .icon:before {
@@ -1566,11 +1582,26 @@ body.is-preload #header .content .inner {
     top: calc(-2rem - 1px);
     height: calc(2rem + 1px);
   }
-
   #header .logo {
-    width: 4.75rem;
-    height: 4.75rem;
-    line-height: 4.75rem;
+      width: 4.75rem;
+      height: 4.75rem;
+      border-radius: 50%;
+      /* pour garder le cercle */
+
+      display: flex;
+      /* centre le contenu */
+      justify-content: center;
+      align-items: center;
+
+      line-height: normal;
+      /* plus nécessaire */
+  }
+
+  #header .logo img {
+      width: 2rem;
+      /* ajuste l’icône ou image */
+      height: 2rem;
+      object-fit: contain;
   }
 
   #header .logo .icon:before {
