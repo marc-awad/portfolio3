@@ -32,7 +32,7 @@
       "transition",
       "background-color #{_duration(bg)} ease-in-out"
     );
-    @include vendor("transition-delay", "#{_duration(intro)}");
+    @include vendor("transition-delay", "#{_duration(about)}");
     background-image: linear-gradient(
         to top,
         #{_palette(bg-overlay)},

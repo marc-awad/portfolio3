@@ -227,7 +227,8 @@ html {
 body,
 input,
 select,
-textarea {
+textarea,
+p {
   color: #ffffff;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;

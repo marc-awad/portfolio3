@@ -87,8 +87,8 @@
       @include vendor(
         "transition",
         (
-          "max-height #{_duration(intro)} ease",
-          "padding #{_duration(intro)} ease",
+          "max-height #{_duration(about)} ease",
+          "padding #{_duration(about)} ease",
           "opacity #{_duration(article)} ease-in-out"
         )
       );
