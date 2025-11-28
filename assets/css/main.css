@@ -1816,3 +1816,32 @@ body.is-article-visible #footer {
 body.is-preload #footer {
   opacity: 0;
 }
+
+.project-title {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    /* titre plus marqué */
+    font-size: 1rem;
+    /* légèrement plus grand */
+    color: #ffffff;
+    /* cohérence avec le thème sombre */
+    line-height: 1.2;
+}
+
+.project-description {
+    margin-bottom: 2.5rem;
+    line-height: 1.75;
+    /* meilleure lisibilité */
+    color: rgba(255, 255, 255, 0.85);
+    /* texte un peu adouci sur fond sombre */
+    font-size: 1rem;
+}
+
+.project-description code {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* léger fond pour les codes */
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+}
