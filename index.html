@@ -17,6 +17,9 @@
         <link rel="stylesheet"
               href="assets/css/noscript.css" />
     </noscript>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 </head>
 
 <body class="is-preload">
@@ -58,10 +61,6 @@
 
                 </ul>
             </nav>
-
-            <!-- Animated background image -->
-            <div class="header-bg"
-                 style="background-image: url('images/header-bg.jpg'); animation: floatBG 10s ease-in-out infinite alternate;"></div>
         </header>
 
 
@@ -182,15 +181,6 @@
                     <strong>Technologies:</strong> <code>Vue.js</code> <code>TypeScript</code> <code>Tailwind</code> <code>Docker</code>
                 </p>
             </article>
-
-
-
-
-
-
-
-
-
 
             <!-- Contact -->
             <article id="contact">
@@ -560,7 +550,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             })
                 .then(response => {
                     if (response.ok) {
-                        status.innerText = "Message envoyé.";
+                        status.innerHTML = '<i class="fa-solid fa-check"></i> Message envoyé.';
                         form.reset();
                     } else {
                         response.json().then(data => {
