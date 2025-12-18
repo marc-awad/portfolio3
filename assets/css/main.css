@@ -1845,3 +1845,7 @@ body.is-preload #footer {
     font-family: "Courier New", monospace;
     font-size: 0.9rem;
 }
+
+.heavy-weight {
+    font-weight: 700;
+}
