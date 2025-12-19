@@ -1958,3 +1958,294 @@ body.is-preload #footer {
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
+
+/* Carousel Container */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+    display: flex;
+    -moz-transition: -moz-transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    -ms-transition: -ms-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    touch-action: pan-y pinch-zoom;
+}
+
+/* Carousel Slide */
+.carousel-slide {
+    min-width: 100%;
+    opacity: 0;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    padding: 0 1rem;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+/* Project Content */
+.project-content {
+    margin-bottom: 1.5rem;
+}
+
+.project-content .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    line-height: 1.4;
+}
+
+.project-content .project-description {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.project-tech {
+    margin-bottom: 1rem;
+}
+
+.project-tech strong {
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.2rem;
+}
+
+.project-tech code {
+    background: rgba(255, 255, 255, 0.075);
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    margin: 0 0.25rem;
+    padding: 0.25rem 0.65rem;
+    display: inline-block;
+}
+
+.project-link {
+    -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
+    padding-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.project-link:hover {
+    border-bottom-color: transparent;
+}
+
+/* Project Image */
+.project-image {
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image:before {
+    pointer-events: none;
+    background-image: url("../../images/overlay.png");
+    background-color: rgba(19, 21, 25, 0.5);
+    border-radius: 4px;
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    -moz-transition: -moz-transform 0.3s ease;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    -ms-transition: -ms-transform 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.project-image:hover img {
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -moz-transform 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, -ms-transform 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    position: absolute;
+    top: 50%;
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: solid 1px #ffffff;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    outline: 0;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+    -moz-transform: translateY(-50%) scale(1.1);
+    -webkit-transform: translateY(-50%) scale(1.1);
+    -ms-transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+    background-color: rgba(255, 255, 255, 0.175);
+}
+
+.carousel-btn-prev {
+    left: -60px;
+}
+
+.carousel-btn-next {
+    right: -60px;
+}
+
+/* Indicators */
+.carousel-indicators {
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.indicator {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    outline: 0;
+}
+
+.indicator.active {
+    background: #ffffff;
+    width: 32px;
+    border-radius: 6px;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 736px) {
+    .carousel-btn-prev {
+        left: 10px;
+    }
+
+    .carousel-btn-next {
+        right: 10px;
+    }
+
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .project-content .project-title {
+        font-size: 1.25rem;
+    }
+
+    .carousel-slide {
+        padding: 0 0.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .project-tech code {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.4rem;
+    }
+
+    .project-content .project-title {
+        font-size: 1.1rem;
+    }
+}
+.image:before {
+  opacity: 0.2; /* Au lieu de 0.5 */
+}
+
+/* Ou le supprimer complètement pour les images principales */
+.image.main:before {
+  display: none;
+}
+.project-tech {
+    margin: 1rem 0;
+}
+
+.project-link-wrapper {
+    margin: 1rem 0 1.5rem 0;
+}

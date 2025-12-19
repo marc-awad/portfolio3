@@ -92,58 +92,87 @@
             </article>
 
 
-            <!-- projects -->
+            <!-- Projects Article - Remplace ton article #projects actuel -->
             <article id="projects">
                 <h2 class="major">Projects</h2>
-                <span class="image main">
-                    <img src="images/pic02.jpg"
-                         alt="Marc's projects showcase" />
-                </span>
-                <p>A selection of my projects, showcasing full-stack development, modern technologies, and user-focused design.</p>
-                <hr>
-                <section>
-                    <h3 class="project-title">NetSlicer</h3>
-                    <p class="project-description">
-                        Full-stack developer on a 5-day academic project, responsible for development, deployment, and project management, creating a web tool to automate VLAN setup on Windows Server and Cisco devices, significantly reducing manual network configuration time.<br><strong>Technologies:</strong> <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>PowerShell</code> <code>Python</code><br>
-                        <a href="https://netslicer.vercel.app/"
-                           target="_blank"
-                           title="Open NetSlicer live project">View Live Project →</a>
-                    </p>
-                </section>
-                <hr>
-                <section>
-                    <h3 class="project-title">Cathé Copte</h3>
-                    <p class="project-description">
-                        Full-stack and DevOps developer for a volunteer project at my church, handling everything from architecture, database design, and backend/frontend development to deployment, creating a web application to manage youth attendance in Coptic Orthodox catechism classes with dashboards and absence tracking to simplify community management.<br><strong>Technologies:</strong> <code>Nuxt</code> <code>Supabase</code> <code>Vercel</code><br>
-                        <a href="https://cathecopte.vercel.app/"
-                           target="_blank"
-                           title="Open Cathé Copte live project">View Live Project →</a>
-                    </p>
-                </section>
-                <hr>
-                <section>
-                    <h3 class="project-title">HSV Hospital</h3>
-                    <p class="project-description">
-                        One of my first course projects, where I gained hands-on experience in UI/UX design, system architecture, and workflow orchestration, developing an appointment booking system for patients that streamlines hospital processes and enhances user experience.<br><strong>Technologies:</strong> <code>Vue.js</code> <code>TypeScript</code> <code>Firebase</code> <code>Vercel</code><br>
-                        <a href="https://hsv-hospital.vercel.app/"
-                           target="_blank"
-                           title="Open HSV Hospital live project">View Live Project →</a>
-                    </p>
-                </section>
-                <hr>
+                <div class="carousel-container">
+                    <!-- Carousel Wrapper -->
+                    <div class="carousel-wrapper">
+                        <!-- Project 1: NetSlicer -->
+                        <div class="carousel-slide active">
+                            <section>
+                                <h3 class="project-title">NetSlicer</h3>
+                                <p class="project-description">
+                                    Full-stack developer on a 5-day academic project, responsible for development, deployment, and project management, creating a web tool to automate VLAN setup on Windows Server and Cisco devices, significantly reducing manual network configuration time.<br><strong>Technologies:</strong> <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>PowerShell</code> <code>Python</code><br>
+                                    <a href="https://netslicer.vercel.app/"
+                                       target="_blank"
+                                       title="Open NetSlicer live project">View Live Project →</a>
+                                </p>
+                                <div class="project-preview">
+                                    <span class="image main">
 
-                <!-- <section>
-                    <h3 class="project-title">Steak Heaven</h3>
-                    <p class="project-description">
-                        Responsive website for a steakhouse, showcasing menu items, ambiance, and location with interactive elements.<br>
-                        <strong>Technologies:</strong> <code>HTML</code> <code>CSS</code> <code>JavaScript</code><br>
-                        <a href="https://marc-awad.github.io/steak-haven/"
-                           target="_blank"
-                           title="Open Steak Heaven live project">View Live Project →</a>
-                    </p>
-                </section> -->
+                                        <img src="images/netslicer-preview.jpg"
+                                             alt="NetSlicer project preview" />
+                                    </span>
+                                </div>
+                            </section>
+                        </div>
 
-                <p>These projects showcase my ability to build reliable, user-friendly applications that solve real problems, while continuously exploring new web technologies and deployment practices.</p>
+                        <!-- Project 2: Cathé Copte -->
+                        <div class="carousel-slide">
+                            <section>
+                                <h3 class="project-title">Cathé Copte</h3>
+                                <p class="project-description">
+                                    Full-stack and DevOps developer for a volunteer project at my church, handling everything from architecture, database design, and backend/frontend development to deployment, creating a web application to manage youth attendance in Coptic Orthodox catechism classes with dashboards and absence tracking to simplify community management.<br><strong>Technologies:</strong> <code>Nuxt</code> <code>Supabase</code> <code>Vercel</code><br>
+                                    <a href="https://cathecopte.vercel.app/"
+                                       target="_blank"
+                                       title="Open Cathé Copte live project">View Live Project →</a>
+                                </p>
+                                <div class="project-preview">
+                                    <span class="image main">
+
+                                        <img src="images/cathecopte-preview.jpg"
+                                             alt="Cathé Copte project preview" />
+                                    </span>
+                                </div>
+                            </section>
+                        </div>
+
+                        <!-- Project 3: HSV Hospital -->
+                        <div class="carousel-slide">
+                            <section>
+                                <h3 class="project-title">HSV Hospital</h3>
+                                <p class="project-description">
+                                    One of my first course projects, where I gained hands-on experience in UI/UX design, system architecture, and workflow orchestration, developing an appointment booking system for patients that streamlines hospital processes and enhances user experience.<br><strong>Technologies:</strong> <code>Vue.js</code> <code>TypeScript</code> <code>Firebase</code> <code>Vercel</code><br>
+                                    <a href="https://hsv-hospital.vercel.app/"
+                                       target="_blank"
+                                       title="Open HSV Hospital live project">View Live Project →</a>
+                                </p>
+                                <div class="project-preview">
+                                    <span class="image main">
+
+                                        <img src="images/hsv-preview.jpg"
+                                             alt="HSV Hospital project preview" />
+                                    </span>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <!-- Indicators -->
+                    <div class="carousel-indicators">
+                        <button class="indicator active"
+                                data-slide="0"
+                                aria-label="Go to project 1"></button>
+                        <button class="indicator"
+                                data-slide="1"
+                                aria-label="Go to project 2"></button>
+                        <button class="indicator"
+                                data-slide="2"
+                                aria-label="Go to project 3"></button>
+                    </div>
+                </div>
+
             </article>
 
 

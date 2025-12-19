@@ -585,3 +585,83 @@
 	};
 
 })(jQuery);
+
+(function() {
+    const wrapper = document.querySelector('.carousel-wrapper');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    let currentSlide = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    // Update carousel position
+    function updateCarousel() {
+        // Remove active class from all
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(ind => ind.classList.remove('active'));
+        
+        // Add active to current
+        slides[currentSlide].classList.add('active');
+        indicators[currentSlide].classList.add('active');
+        
+        // Move wrapper
+        wrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateCarousel();
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+    }
+    
+    // Event listeners - Indicators
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        // Only navigate if projects article is visible
+        const projectsArticle = document.querySelector('#projects');
+        if (projectsArticle && projectsArticle.classList.contains('active')) {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
+        }
+    });
+    
+    // Touch events for swipe
+    wrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    wrapper.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                nextSlide(); // Swipe left
+            } else {
+                prevSlide(); // Swipe right
+            }
+        }
+    }
+})();
