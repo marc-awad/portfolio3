@@ -1849,3 +1849,112 @@ body.is-preload #footer {
 .heavy-weight {
     font-weight: 700;
 }
+ /* Language Switcher - Intégré au design existant */
+ .language-switcher {
+     position: absolute;
+     top: 20px;
+     right: 20px;
+     z-index: 10000;
+     display: flex;
+ }
+
+ .lang-btn {
+     -moz-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+     -webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+     -ms-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+     transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+     display: inline-block;
+     padding: 0 1rem;
+     height: 2.25rem;
+     line-height: 2.25rem;
+     text-decoration: none;
+     background-color: transparent;
+     border: solid 1px #ffffff;
+     color: #ffffff;
+     font-size: 0.7rem;
+     font-weight: 300;
+     letter-spacing: 0.2rem;
+     text-transform: uppercase;
+     border-radius: 0;
+ }
+
+ .lang-btn:first-child {
+     border-radius: 4px 0 0 4px;
+     border-right: none;
+ }
+
+ .lang-btn:last-child {
+     border-radius: 0 4px 4px 0;
+ }
+
+ .lang-btn:hover {
+     background-color: rgba(255, 255, 255, 0.075);
+     border-bottom-color: #ffffff;
+ }
+
+ .lang-btn.active {
+     background-color: #ffffff;
+     color: #1b1f22;
+     font-weight: 600;
+ }
+
+ @media screen and (max-width: 736px) {
+     .language-switcher {
+         top: 15px;
+         right: 15px;
+     }
+
+     .lang-btn {
+         padding: 0 0.75rem;
+         height: 2rem;
+         line-height: 2rem;
+         font-size: 0.65rem;
+     }
+ }
+
+ /* Masquer les boutons quand une modale est ouverte */
+ body.is-article-visible .language-switcher {
+     -moz-transform: scale(0.95);
+     -webkit-transform: scale(0.95);
+     -ms-transform: scale(0.95);
+     transform: scale(0.95);
+     -moz-filter: blur(0.1rem);
+     -webkit-filter: blur(0.1rem);
+     -ms-filter: blur(0.1rem);
+     filter: blur(0.1rem);
+     opacity: 0;
+     pointer-events: none;
+ }
+
+ @media screen and (max-width: 736px) {
+     .language-switcher {
+         top: 15px;
+         right: 15px;
+     }
+
+     .lang-btn {
+         padding: 0 0.75rem;
+         height: 2rem;
+         line-height: 2rem;
+         font-size: 0.65rem;
+     }
+ }
+
+@media screen and (max-width: 480px) {
+        .language-switcher {
+            top: 10px;
+            right: 10px;
+        }
+
+        .lang-btn {
+            padding: 0 0.65rem;
+            height: 1.85rem;
+            line-height: 1.85rem;
+            font-size: 0.6rem;
+            letter-spacing: 0.15rem;
+        }
+}
+.mb-8 {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
