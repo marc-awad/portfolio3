@@ -7,10 +7,72 @@
 <html lang="fr">
 
 <head>
-    <title>Marc</title>
     <meta charset="utf-8" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- SEO Meta Tags -->
+    <title>Marc Awad | Développeur Full-Stack – Portfolio, Projets & Contact</title>
+    <meta name="description"
+          content="Portfolio de Marc Awad, Développeur Full-Stack spécialisé en React, Vue.js, TypeScript, Node.js et déploiement cloud. Découvrez mes projets, mon parcours et contactez-moi." />
+    <meta name="keywords"
+          content="Marc Awad, développeur full-stack, développeur web, React, Vue.js, TypeScript, Node.js, portfolio, projets, Vercel, Supabase, frontend, backend" />
+    <meta name="author"
+          content="Marc Awad" />
+    <meta name="robots"
+          content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical"
+          href="https://marcawad.vercel.app/fr.html" />
+
+    <!-- Hreflang pour le SEO multilingue -->
+    <link rel="alternate"
+          hreflang="en"
+          href="https://marcawad.vercel.app/" />
+    <link rel="alternate"
+          hreflang="fr"
+          href="https://marcawad.vercel.app/fr.html" />
+    <link rel="alternate"
+          hreflang="x-default"
+          href="https://marcawad.vercel.app/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type"
+          content="website" />
+    <meta property="og:url"
+          content="https://marcawad.vercel.app/fr.html" />
+    <meta property="og:title"
+          content="Marc Awad | Développeur Full-Stack – Portfolio" />
+    <meta property="og:description"
+          content="Découvrez le portfolio de Marc Awad, Développeur Full-Stack. Projets réalisés avec React, Vue.js, TypeScript, Supabase & Vercel." />
+    <meta property="og:image"
+          content="https://marcawad.vercel.app/images/og-preview.jpg" />
+    <meta property="og:locale"
+          content="fr_FR" />
+    <meta property="og:locale:alternate"
+          content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"
+          content="summary_large_image" />
+    <meta name="twitter:title"
+          content="Marc Awad | Développeur Full-Stack – Portfolio" />
+    <meta name="twitter:description"
+          content="Découvrez le portfolio de Marc Awad, Développeur Full-Stack. Projets réalisés avec React, Vue.js, TypeScript, Supabase & Vercel." />
+    <meta name="twitter:image"
+          content="https://marcawad.vercel.app/images/og-preview.jpg" />
+
+    <!-- Preconnect pour la performance -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com" />
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin />
+    <link rel="preconnect"
+          href="https://cdnjs.cloudflare.com" />
+
+    <!-- Stylesheets -->
     <link rel="stylesheet"
           href="assets/css/main.css" />
     <noscript>
@@ -19,6 +81,85 @@
     </noscript>
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- Schema.org JSON-LD Données structurées -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Marc Awad",
+        "url": "https://marcawad.vercel.app/",
+        "jobTitle": "Développeur Full-Stack",
+        "description": "Développeur Full-Stack passionné par les projets open-source, l'apprentissage continu et la création de solutions web innovantes.",
+        "sameAs": [
+          "https://www.linkedin.com/in/marc-awad/",
+          "https://github.com/marc-awad"
+        ],
+        "knowsAbout": ["React", "Vue.js", "TypeScript", "Node.js", "Tailwind CSS", "Supabase", "Vercel", "C#", "Python"],
+        "alumniOf": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "Sup de Vinci"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "UPEC (Université Paris-Est Créteil)"
+          }
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Prévoir"
+        }
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Projets du Portfolio",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "NetSlicer",
+            "description": "Outil web pour automatiser la configuration des VLAN sur Windows Server et Cisco, réduisant le temps de configuration réseau manuelle.",
+            "url": "https://netslicer.vercel.app/",
+            "author": { "@type": "Person", "name": "Marc Awad" },
+            "keywords": ["HTML", "CSS", "JavaScript", "PowerShell", "Python"]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "Cathé Copte",
+            "description": "Application web pour gérer la présence des jeunes dans les classes de catéchisme copte orthodoxe avec tableaux de bord et suivi des absences.",
+            "url": "https://cathecopte.vercel.app/",
+            "author": { "@type": "Person", "name": "Marc Awad" },
+            "keywords": ["Nuxt", "Supabase", "Vercel"]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "CreativeWork",
+            "name": "HSV Hospital",
+            "description": "Système de réservation de rendez-vous pour patients optimisant les processus hospitaliers et l'expérience utilisateur.",
+            "url": "https://hsv-hospital.vercel.app/",
+            "author": { "@type": "Person", "name": "Marc Awad" },
+            "keywords": ["Vue.js", "TypeScript", "Firebase", "Vercel"]
+          }
+        }
+      ]
+    }
+    </script>
 
 </head>
 
@@ -42,7 +183,7 @@
 
             <div class="content">
                 <div class="inner">
-                    <h1>Marc</h1>
+                    <h1>Marc Awad</h1>
                     <p class="heavy-weight">
                         Je suis Marc, un Développeur Full-Stack<br>
                         passionné par les projets open-source, l'apprentissage et la création de solutions web innovantes.
@@ -77,7 +218,8 @@
                 <h2 class="major">À propos de moi</h2>
                 <span class="image main">
                     <img src="images/pic01.jpg"
-                         alt="Portrait de Marc Awad" />
+                         alt="Portrait de Marc Awad, Développeur Full-Stack"
+                         loading="lazy" />
                 </span>
 
                 <p>
@@ -108,12 +250,14 @@
                                     Développeur full-stack sur un projet académique réalisé en 5 jours, responsable du développement, du déploiement et de la gestion du projet, créant un outil web pour automatiser la configuration des VLAN sur Windows Server et des équipements Cisco, réduisant considérablement le temps de configuration réseau manuelle.<br><strong>Technologies :</strong> <code>HTML</code> <code>CSS</code> <code>JavaScript</code> <code>PowerShell</code> <code>Python</code><br>
                                     <a href="https://netslicer.vercel.app/"
                                        target="_blank"
+                                       rel="noopener noreferrer"
                                        title="Ouvrir le projet NetSlicer">Voir le projet en ligne →</a>
                                 </p>
                                 <div class="project-preview">
                                     <span class="image main">
                                         <img src="images/netslicer-preview.jpg"
-                                             alt="Aperçu du projet NetSlicer" />
+                                             alt="NetSlicer – Outil web d'automatisation VLAN, aperçu du projet"
+                                             loading="lazy" />
                                     </span>
                                 </div>
                             </section>
@@ -127,12 +271,14 @@
                                     Développeur full-stack et DevOps sur un projet bénévole pour mon église, gérant tout de l'architecture, la conception de la base de données et le développement backend/frontend jusqu'au déploiement, créant une application web pour gérer la présence des jeunes dans les classes de catéchisme copte orthodoxe avec des tableaux de bord et un suivi des absences pour simplifier la gestion communautaire.<br><strong>Technologies :</strong> <code>Nuxt</code> <code>Supabase</code> <code>Vercel</code><br>
                                     <a href="https://cathecopte.vercel.app/"
                                        target="_blank"
+                                       rel="noopener noreferrer"
                                        title="Ouvrir le projet Cathé Copte">Voir le projet en ligne →</a>
                                 </p>
                                 <div class="project-preview">
                                     <span class="image main">
                                         <img src="images/cathecopte-preview.jpg"
-                                             alt="Aperçu du projet Cathé Copte" />
+                                             alt="Cathé Copte – Application web de gestion de présence catéchisme"
+                                             loading="lazy" />
                                     </span>
                                 </div>
                             </section>
@@ -146,12 +292,14 @@
                                     L'un de mes premiers projets académiques, où j'ai acquis une expérience pratique en conception UI/UX, architecture système et orchestration de workflows, développant un système de réservation de rendez-vous pour les patients qui optimise les processus hospitaliers et améliore l'expérience utilisateur.<br><strong>Technologies :</strong> <code>Vue.js</code> <code>TypeScript</code> <code>Firebase</code> <code>Vercel</code><br>
                                     <a href="https://hsv-hospital.vercel.app/"
                                        target="_blank"
+                                       rel="noopener noreferrer"
                                        title="Ouvrir le projet HSV Hospital">Voir le projet en ligne →</a>
                                 </p>
                                 <div class="project-preview">
                                     <span class="image main">
                                         <img src="images/hsv-preview.jpg"
-                                             alt="Aperçu du projet HSV Hospital" />
+                                             alt="HSV Hospital – Système de réservation de rendez-vous patients en Vue.js"
+                                             loading="lazy" />
                                     </span>
                                 </div>
                             </section>
@@ -180,7 +328,8 @@
                 <h2 class="major">Formation</h2>
                 <span class="image main">
                     <img src="images/pic03.jpg"
-                         alt="Illustration formation" />
+                         alt="Parcours académique de Marc Awad en informatique"
+                         loading="lazy" />
                 </span>
 
                 <h3>Sup de Vinci</h3>
@@ -203,7 +352,8 @@
                 <h2 class="major">Expérience</h2>
                 <span class="image main">
                     <img src="images/pic04.jpg"
-                         alt="Illustration expérience" />
+                         alt="Expérience professionnelle de Marc Awad en développement Full-Stack"
+                         loading="lazy" />
                 </span>
 
                 <h3>Prévoir</h3>
@@ -257,9 +407,11 @@
                 <ul class="icons">
                     <li><a href="https://www.linkedin.com/in/marc-awad/"
                            target="_blank"
+                           rel="noopener noreferrer"
                            class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
                     <li><a href="https://github.com/marc-awad"
                            target="_blank"
+                           rel="noopener noreferrer"
                            class="icon brands fa-github"><span class="label">Github</span></a></li>
                 </ul>
             </article>
@@ -274,9 +426,9 @@
                         Ceci est du texte en <sup>exposant</sup> et ceci est en <sub>indice</sub>.
                         Ceci est <u>souligné</u> et ceci est du code : <code>for (;;) { ... }</code>. Enfin, <a href="#">ceci est un lien</a>.</p>
                     <hr />
-                    <h2>Titre Niveau 2</h2>
-                    <h3>Titre Niveau 3</h3>
-                    <h4>Titre Niveau 4</h4>
+                    <h3>Titre Niveau 2</h3>
+                    <h4>Titre Niveau 3</h4>
+                    <h5>Titre Niveau 4</h5>
                     <h5>Titre Niveau 5</h5>
                     <h6>Titre Niveau 6</h6>
                     <hr />
@@ -324,9 +476,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                     <ul class="icons">
                         <li><a href="https://www.linkedin.com/in/marc-awad/"
                                target="_blank"
+                               rel="noopener noreferrer"
                                class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
                         <li><a href="https://github.com/marc-awad"
                                target="_blank"
+                               rel="noopener noreferrer"
                                class="icon brands fa-github"><span class="label">Github</span></a></li>
                     </ul>
 
@@ -548,7 +702,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
         <!-- Footer -->
         <footer id="footer">
-            <p class="copyright">&copy; Marc AWAD<br>2025
+            <p class="copyright">&copy; Marc AWAD<br>
+                <script>document.write(new Date().getFullYear())</script>
             </p>
         </footer>
 
@@ -568,7 +723,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         const status = document.getElementById('form-status');
 
         form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Empêche le rechargement de la page
+            event.preventDefault();
 
             const formData = new FormData(form);
 
@@ -596,6 +751,26 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 .catch(error => {
                     status.innerText = "Erreur réseau.";
                 });
+        });
+
+        // Lazy-load images avec IntersectionObserver
+        document.addEventListener('DOMContentLoaded', function () {
+            var lazyImages = document.querySelectorAll('img[data-src]');
+            if ('IntersectionObserver' in window) {
+                var observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            var img = entry.target;
+                            img.src = img.dataset.src;
+                            img.removeAttribute('data-src');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                lazyImages.forEach(function (img) { observer.observe(img); });
+            } else {
+                lazyImages.forEach(function (img) { img.src = img.dataset.src; });
+            }
         });
     </script>
 
