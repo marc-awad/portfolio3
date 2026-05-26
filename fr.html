@@ -440,15 +440,20 @@
     <script>
         const form = document.getElementById('contact-form');
         const status = document.getElementById('form-status');
+        const submitBtn = form.querySelector('input[type="submit"]');
+        const originalBtnValue = submitBtn.value;
 
         form.addEventListener('submit', function (event) {
             event.preventDefault();
+            if (submitBtn.disabled) return;
 
-            const formData = new FormData(form);
+            submitBtn.disabled = true;
+            submitBtn.value = 'Envoi en cours...';
+            status.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Envoi de votre message...';
 
             fetch('https://formspree.io/f/xdkrglon', {
                 method: 'POST',
-                body: formData,
+                body: new FormData(form),
                 headers: {
                     'Accept': 'application/json'
                 }
@@ -458,17 +463,21 @@
                         status.innerHTML = '<i class="fa-solid fa-check"></i> Message envoyé.';
                         form.reset();
                     } else {
-                        response.json().then(data => {
+                        return response.json().then(data => {
                             if (data.errors) {
                                 status.innerText = data.errors.map(error => error.message).join(", ");
                             } else {
                                 status.innerText = "Erreur lors de l'envoi.";
                             }
-                        })
+                        });
                     }
                 })
-                .catch(error => {
+                .catch(() => {
                     status.innerText = "Erreur réseau.";
+                })
+                .finally(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.value = originalBtnValue;
                 });
         });
     </script>
