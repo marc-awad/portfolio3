@@ -184,4 +184,7 @@
             show(location.hash.substr(1), true);
         });
     }
+
+    var yearEl = document.querySelector('.copyright .year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 })();
