@@ -201,12 +201,11 @@
             <nav>
                 <ul class="heavy-weight">
                     <li><a href="#about">About me</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#Education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="files/CV_Marc_Awad_eng.pdf"
                            download>CV</a></li>
-
-
                 </ul>
             </nav>
         </header>
@@ -232,6 +231,35 @@
 
                 <p>
                     Curious, driven, and inspired by open-source culture, I approach every challenge with a growth mindset, always learning and experimenting with new tools. Check out my <a href="#projects">favorite projects</a> to see my work live in action.
+                </p>
+            </article>
+
+
+            <!-- Skills -->
+            <article id="skills">
+                <h2 class="major">Skills</h2>
+                <span class="image main"><img src="images/pic02.jpg"
+                         alt="Marc Awad technical skills and technologies"
+                         loading="lazy" /></span>
+
+                <h3><i class="fa-solid fa-display"></i> Frontend</h3>
+                <p>
+                    <code>React</code> <code>Vue.js</code> <code>Nuxt.js</code> <code>TypeScript</code> <code>Tailwind CSS</code> <code>HTML5</code> <code>CSS3</code> <code>JavaScript</code>
+                </p>
+
+                <h3><i class="fa-solid fa-server"></i> Backend</h3>
+                <p>
+                    <code>Node.js</code> <code>C#</code> <code>Python</code> <code>PowerShell</code>
+                </p>
+
+                <h3><i class="fa-solid fa-database"></i> Databases &amp; BaaS</h3>
+                <p>
+                    <code>Supabase</code> <code>Firebase</code>
+                </p>
+
+                <h3><i class="fa-solid fa-cloud"></i> DevOps &amp; Cloud</h3>
+                <p>
+                    <code>Vercel</code> <code>Docker</code> <code>Git</code> <code>GitHub</code>
                 </p>
             </article>
 
@@ -402,7 +430,9 @@
                         <li><input type="reset"
                                    value="Reset" /></li>
                     </ul>
-                    <label id="form-status"></label>
+                    <div id="form-status"
+                         role="status"
+                         aria-live="polite"></div>
                 </form>
 
 
