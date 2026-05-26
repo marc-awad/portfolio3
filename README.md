@@ -24,7 +24,7 @@ This is a **minimalist, black-and-white portfolio** built entirely with **HTML, 
 
 - HTML5
 - CSS3 (Flexbox, Grid, SASS)
-- JavaScript (Vanilla JS + jQuery)
+- JavaScript (Vanilla JS)
 
 ---
 
