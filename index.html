@@ -472,26 +472,6 @@
                     status.innerText = "Network error.";
                 });
         });
-
-        // Lazy-load images with IntersectionObserver
-        document.addEventListener('DOMContentLoaded', function () {
-            var lazyImages = document.querySelectorAll('img[data-src]');
-            if ('IntersectionObserver' in window) {
-                var observer = new IntersectionObserver(function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            var img = entry.target;
-                            img.src = img.dataset.src;
-                            img.removeAttribute('data-src');
-                            observer.unobserve(img);
-                        }
-                    });
-                });
-                lazyImages.forEach(function (img) { observer.observe(img); });
-            } else {
-                lazyImages.forEach(function (img) { img.src = img.dataset.src; });
-            }
-        });
     </script>
 
 </body>
