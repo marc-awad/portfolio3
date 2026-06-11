@@ -8,17 +8,28 @@ try {
 } catch {
     date = new Date().toISOString().slice(0, 10);
 }
+const year = date.slice(0, 4);
 
-const path = 'sitemap.xml';
-const before = readFileSync(path, 'utf8');
-const after = before.replace(
-    /<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g,
-    `<lastmod>${date}</lastmod>`
-);
-
-if (before === after) {
-    console.log(`sitemap.xml already up to date (${date})`);
-} else {
-    writeFileSync(path, after);
-    console.log(`sitemap.xml lastmod set to ${date}`);
+function patchFile(path, replacements) {
+    const before = readFileSync(path, 'utf8');
+    let after = before;
+    for (const [pattern, replacement] of replacements) {
+        after = after.replace(pattern, replacement);
+    }
+    if (before === after) {
+        console.log(`${path}: already up to date`);
+    } else {
+        writeFileSync(path, after);
+        console.log(`${path}: updated`);
+    }
 }
+
+patchFile('sitemap.xml', [
+    [/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/g, `<lastmod>${date}</lastmod>`]
+]);
+
+const yearReplacement = [/<span class="year">[^<]*<\/span>/g, `<span class="year">${year}</span>`];
+patchFile('index.html', [yearReplacement]);
+patchFile('fr.html', [yearReplacement]);
+
+console.log(`\nBuild patches applied for ${date} (year ${year}).`);
