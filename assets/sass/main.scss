@@ -49,14 +49,19 @@
 
 // Component.
 
+// NOTE: main.css (the compiled output served in production) has been
+// manually trimmed. Modules below are still imported to keep the SASS
+// source compilable, but unused rules have been stripped from main.css.
+// If you ever recompile (`npx sass`), you'll lose the trims — re-apply
+// via scripts/trim-css.mjs (see commit history).
 @import "components/form";
-@import "components/box";
-@import "components/icon";
+// box removed entirely (no .box element used)
+// icon removed entirely (Font Awesome dependencies replaced by inline SVG)
 @import "components/image";
 @import "components/list";
 @import "components/actions";
 @import "components/icons";
-@import "components/table";
+// table removed entirely (no <table> elements used)
 @import "components/button";
 
 // Layout.
