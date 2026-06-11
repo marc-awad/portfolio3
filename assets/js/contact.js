@@ -11,16 +11,19 @@
     const originalBtnValue = submitBtn.value;
     const isFR = document.documentElement.lang === 'fr';
 
+    const spinnerSvg = '<svg class="icon-spin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4a8 8 0 1 1-7.39 4.91l-3.69-1.55A12 12 0 1 0 12 2z" fill="currentColor"/></svg>';
+    const checkSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="currentColor"/></svg>';
+
     const strings = isFR ? {
         sending: 'Envoi en cours...',
-        sendingMessage: '<i class="fa-solid fa-spinner fa-spin"></i> Envoi de votre message...',
-        success: '<i class="fa-solid fa-check"></i> Message envoyé.',
+        sendingMessage: spinnerSvg + ' Envoi de votre message...',
+        success: checkSvg + ' Message envoyé.',
         errorGeneric: "Erreur lors de l'envoi.",
         errorNetwork: 'Erreur réseau.'
     } : {
         sending: 'Sending...',
-        sendingMessage: '<i class="fa-solid fa-spinner fa-spin"></i> Sending your message...',
-        success: '<i class="fa-solid fa-check"></i> Message sent successfully.',
+        sendingMessage: spinnerSvg + ' Sending your message...',
+        success: checkSvg + ' Message sent successfully.',
         errorGeneric: 'Error sending message.',
         errorNetwork: 'Network error.'
     };
