@@ -18,11 +18,12 @@
         return el.tagName === 'ARTICLE';
     }) : [];
 
-    window.addEventListener('load', function () {
-        window.setTimeout(function () {
-            body.classList.remove('is-preload');
-        }, 100);
-    });
+    // Defer scripts run after the DOM is parsed, so we can drop is-preload
+    // immediately. Waiting for `window.load` blocks on lazy images / fonts and
+    // leaves mobile clients on slow networks staring at a black screen.
+    window.setTimeout(function () {
+        body.classList.remove('is-preload');
+    }, 100);
 
     if (header) {
         var nav = header.querySelector('nav');
