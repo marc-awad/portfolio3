@@ -37,6 +37,11 @@
         btn.addEventListener('click', () => goTo(i));
     });
 
+    const prevBtn = document.querySelector('.carousel-btn-prev');
+    const nextBtn = document.querySelector('.carousel-btn-next');
+    if (prevBtn) prevBtn.addEventListener('click', prev);
+    if (nextBtn) nextBtn.addEventListener('click', next);
+
     document.addEventListener('keydown', (e) => {
         const projects = document.querySelector('#projects');
         if (projects && projects.classList.contains('active')) {
