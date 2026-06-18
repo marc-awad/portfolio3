@@ -11,34 +11,12 @@
     let touchEndX = 0;
 
     function update() {
-        slides.forEach((s, i) => {
-            const isActive = i === current;
-            s.classList.toggle('active', isActive);
-            // Inactive slides are translated off-screen but stay in the DOM.
-            // `inert` removes them from the tab order and the accessibility
-            // tree so keyboard / screen-reader users can't land on the
-            // hidden "View Live Project" links. aria-hidden is belt-and-
-            // suspenders for older AT that predates inert support.
-            if (isActive) {
-                s.removeAttribute('inert');
-                s.removeAttribute('aria-hidden');
-            } else {
-                s.setAttribute('inert', '');
-                s.setAttribute('aria-hidden', 'true');
-            }
-        });
-        indicators.forEach((ind, i) => {
-            const isActive = i === current;
-            ind.classList.toggle('active', isActive);
-            if (isActive) ind.setAttribute('aria-current', 'true');
-            else ind.removeAttribute('aria-current');
-        });
+        slides.forEach((s) => s.classList.remove('active'));
+        indicators.forEach((i) => i.classList.remove('active'));
+        slides[current].classList.add('active');
+        if (indicators[current]) indicators[current].classList.add('active');
         wrapper.style.transform = `translateX(-${100 * current}%)`;
     }
-
-    // Establish the initial inert/aria state for the non-active slides
-    // (the markup ships with slide 0 active, the rest are not yet inert).
-    update();
 
     function next() {
         current = (current + 1) % slides.length;

@@ -10,12 +10,11 @@ A **minimalist, black-and-white** portfolio built entirely with vanilla HTML/CSS
 ## ✨ Highlights
 
 - **Performance**: ~90 Lighthouse mobile, **A+** on [securityheaders.com](https://securityheaders.com)
-- **SEO**: Schema.org JSON-LD enriched (`Person`, `ProfilePage`, `ItemList`, `EducationalOccupationalCredential`, `Occupation`, `Language`, `EducationalOrganization`); full Open Graph (incl. `image:width/height/alt`)
-- **Accessibility**: ARIA roles, semantic HTML, skip-to-content link, `prefers-reduced-motion` support, focus-managed carousel (`inert` on off-screen slides), `aria-current` on active language, no `user-scalable=no`
-- **Security**: strict CSP with **no `unsafe-inline` at all** (`script-src 'self'`, `style-src 'self'`), Permissions-Policy disabling 12 features
+- **SEO**: Schema.org JSON-LD enriched (`Person`, `ProfilePage`, `ItemList`, `EducationalOccupationalCredential`, `Occupation`, `Language`, `EducationalOrganization`)
+- **Accessibility**: ARIA roles, semantic HTML, lazy loading, no `user-scalable=no`
+- **Security**: strict CSP (`script-src 'self'`), Permissions-Policy disabling 12 features, no `unsafe-inline`
 - **Bilingual**: parallel EN/FR pages with `hreflang` SEO
-- **Zero third-party requests**: fonts self-hosted, no jQuery/Font Awesome/analytics — the only external call is the Formspree POST on form submit
-- **CI**: GitHub Actions validates HTML markup and checks every link/asset on each push
+- **Zero external JS dependencies** (no jQuery, no Font Awesome, no analytics — only Google Fonts CSS)
 
 ---
 
@@ -35,9 +34,6 @@ Converted every JPG to WebP via [`scripts/optimize-images.mjs`](scripts/optimize
 ### Why inline SVG for icons (no Font Awesome)?
 Font Awesome was loading **~76 KB of CSS + 4 woff2 font files** to render **10 icons**. Inline SVG = **~3 KB total**, zero render-blocking requests, no third-party dependency. Win-win-win.
 
-### Why self-host the fonts (no Google Fonts CDN)?
-Source Sans Pro is downloaded once via [`scripts/fetch-fonts.mjs`](scripts/fetch-fonts.mjs) (latin + latin-ext subsets, 4 styles, `woff2`) and served from `/assets/webfonts/`. This removes the render-blocking Google stylesheet **and** the two `preconnect` requests, drops the last non-Formspree third party (privacy win — no IP leak to Google), and lets the CSP tighten to `style-src 'self'` / `font-src 'self'` with **zero `unsafe-inline`**. The two primary weights are `<link rel="preload">`-ed; the rest load on demand via `unicode-range`.
-
 ### Why no analytics?
 Privacy by default. The contact form goes through Formspree (only third party), and I don't need to know visitor counts to ship the site.
 
@@ -54,29 +50,24 @@ Free tier, fast CDN, automatic deploys from Git, easy custom headers in `vercel.
 ```
 ├── index.html           EN portfolio page
 ├── fr.html              FR portfolio page (parallel content)
-├── 404.html             Custom 404 page (styles live in main.css, no inline <style>)
+├── 404.html             Custom 404 page
 ├── sitemap.xml          Auto-updated by build script
 ├── robots.txt
 ├── vercel.json          Headers (CSP, Permissions-Policy, cache), build config
-├── .htmlvalidate.json   html-validate config (used by CI)
-├── .github/workflows/
-│   └── ci.yml           HTML validation + link/asset check on every push
 ├── assets/
-│   ├── css/main.css     Hand-trimmed; includes self-hosted @font-face + a11y rules
+│   ├── css/main.css     ~27 KB, hand-trimmed (started at ~37 KB)
 │   ├── js/
 │   │   ├── main.js      Article navigation + header
-│   │   ├── util.js      Carousel logic (inert/aria on inactive slides)
+│   │   ├── util.js      Carousel logic
 │   │   ├── contact.js   Form submission with bilingual messages
 │   │   ├── breakpoints.min.js
 │   │   └── browser.min.js
-│   ├── webfonts/        Self-hosted Source Sans Pro woff2 (latin + latin-ext)
 │   └── sass/            Source SASS (kept for future iterations)
-├── images/              WebP previews, hero pics, OG card (1200×630)
+├── images/              WebP previews, hero pics, OG card
 ├── files/               CV PDFs (EN + FR)
 └── scripts/
     ├── update-sitemap.mjs   Runs at Vercel build: updates sitemap dates + footer year
     ├── optimize-images.mjs  One-shot JPG→WebP converter
-    ├── fetch-fonts.mjs      One-shot Google-Fonts → self-hosted woff2 downloader
     └── trim-css.mjs         One-shot CSS dead-code remover
 ```
 
