@@ -1,36 +1,91 @@
-# Marc Awad - Portfolio
+# Marc Awad — Portfolio
 
-Welcome to my personal portfolio website.  
-This is a **minimalist, black-and-white portfolio** built entirely with **HTML, CSS, and JavaScript**, showcasing my projects, skills, and experience as a Full-Stack Developer.
+> Personal portfolio of Marc Awad, Full-Stack Developer.
+> Live: **[marcawad.vercel.app](https://marcawad.vercel.app/)** · Bilingual EN/FR · Hand-coded.
 
----
-
-## 🌐 Features
-
-- **Minimalist design:** Black background, white text, clean layout.
-- **Full-Stack showcase:** Projects built with Vue.js, Nuxt.js, TypeScript, Supabase, Firebase, and deployed on Vercel.
-- **Responsive:** Works smoothly on desktop, tablet, and mobile devices.
-- **Interactive sections:**
-  - Intro / Hello World
-  - About Me
-  - Works / Projects
-  - Contact / Say Hello
-- **Smooth scrolling and simple animations** for a modern UX.
-- **Open-source inspired:** Clean code and modular structure.
+A **minimalist, black-and-white** portfolio built entirely with vanilla HTML/CSS/JS — no React, no frameworks, no build step beyond a tiny Node script. Showcases my projects, skills, certifications, and experience.
 
 ---
 
-## 💻 Technologies Used
+## ✨ Highlights
 
-- HTML5
-- CSS3 (Flexbox, Grid, SASS)
-- JavaScript (Vanilla JS)
+- **Performance**: ~90 Lighthouse mobile, **A+** on [securityheaders.com](https://securityheaders.com)
+- **SEO**: Schema.org JSON-LD enriched (`Person`, `ProfilePage`, `ItemList`, `EducationalOccupationalCredential`, `Occupation`, `Language`, `EducationalOrganization`)
+- **Accessibility**: ARIA roles, semantic HTML, lazy loading, no `user-scalable=no`
+- **Security**: strict CSP (`script-src 'self'`), Permissions-Policy disabling 12 features, no `unsafe-inline`
+- **Bilingual**: parallel EN/FR pages with `hreflang` SEO
+- **Zero external JS dependencies** (no jQuery, no Font Awesome, no analytics — only Google Fonts CSS)
+
+---
+
+## 🧠 Tech decisions (why this stack)
+
+### Why vanilla JS over React/Vue?
+A portfolio is a **read-mostly site with a few interactive bits** (carousel, form, navigation). Adding React would mean:
+- 40+ KB of framework JS on a 16 KB total budget
+- A build step and hot-reload tooling for ~5 components
+- Loss of direct HTML/CSS control
+
+Vanilla JS (5 files, **16 KB total**) lets me hand-tune every interaction without abstraction overhead. The carousel state machine, the form spinner, the article navigation — they're all simpler in vanilla.
+
+### Why WebP for all images?
+Converted every JPG to WebP via [`scripts/optimize-images.mjs`](scripts/optimize-images.mjs) (sharp, quality 75, max width 1920). Result: **13 MB → 720 KB total** (-95%). Browser support is at 97%+ in 2026.
+
+### Why inline SVG for icons (no Font Awesome)?
+Font Awesome was loading **~76 KB of CSS + 4 woff2 font files** to render **10 icons**. Inline SVG = **~3 KB total**, zero render-blocking requests, no third-party dependency. Win-win-win.
+
+### Why no analytics?
+Privacy by default. The contact form goes through Formspree (only third party), and I don't need to know visitor counts to ship the site.
+
+### Why two separate HTML files (EN + FR) instead of i18n?
+For 2 pages, a templating engine is over-engineering. The duplication is **manageable manually**, with a discipline of always editing both. Migration to Astro is on the table if I ever add a third language or more pages.
+
+### Why Vercel?
+Free tier, fast CDN, automatic deploys from Git, easy custom headers in `vercel.json`. Also, the [`update-sitemap.mjs`](scripts/update-sitemap.mjs) build script automatically refreshes the sitemap `<lastmod>` and the footer year on every deploy — zero manual maintenance.
+
+---
+
+## 📦 Project structure
+
+```
+├── index.html           EN portfolio page
+├── fr.html              FR portfolio page (parallel content)
+├── 404.html             Custom 404 page
+├── sitemap.xml          Auto-updated by build script
+├── robots.txt
+├── vercel.json          Headers (CSP, Permissions-Policy, cache), build config
+├── assets/
+│   ├── css/main.css     ~27 KB, hand-trimmed (started at ~37 KB)
+│   ├── js/
+│   │   ├── main.js      Article navigation + header
+│   │   ├── util.js      Carousel logic
+│   │   ├── contact.js   Form submission with bilingual messages
+│   │   ├── breakpoints.min.js
+│   │   └── browser.min.js
+│   └── sass/            Source SASS (kept for future iterations)
+├── images/              WebP previews, hero pics, OG card
+├── files/               CV PDFs (EN + FR)
+└── scripts/
+    ├── update-sitemap.mjs   Runs at Vercel build: updates sitemap dates + footer year
+    ├── optimize-images.mjs  One-shot JPG→WebP converter
+    └── trim-css.mjs         One-shot CSS dead-code remover
+```
+
+---
+
+## 🚀 Local development
+
+```bash
+# Just serve the static files
+python -m http.server 8765
+# Then open http://127.0.0.1:8765/
+```
+
+No npm install, no bundler, no hot-reload. Just edit and refresh.
 
 ---
 
 ## 📬 Contact
-
-Feel free to reach out:
 
 - **Email:** awad.marc@outlook.com
 - **LinkedIn:** [https://www.linkedin.com/in/marc-awad](https://www.linkedin.com/in/marc-awad)
@@ -38,13 +93,6 @@ Feel free to reach out:
 
 ---
 
-### 🎨 Design
+## 📜 License
 
-- Black background (`#000`)
-- White text (`#fff`)
-- Clean, minimal typography
-- Focus on content, readability, and simplicity
-
----
-
-Made with ❤️ by **Marc Awad**.
+Based on the [Dimension](https://html5up.net/dimension) template by [@ajlkn](https://html5up.net/) under [CCA 3.0](https://html5up.net/license). Custom content, code refactoring, and additions are mine.
