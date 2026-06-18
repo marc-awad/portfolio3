@@ -12,7 +12,7 @@
           content="width=device-width, initial-scale=1" />
 
     <!-- SEO Meta Tags -->
-    <title>Marc Awad | Full-Stack Developer – Portfolio, Projects & Contact</title>
+    <title>Marc Awad | Full-Stack Developer – Portfolio, Projects &amp; Contact</title>
     <meta name="description"
           content="Portfolio of Marc Awad, Full-Stack Developer specializing in React, Vue.js, TypeScript, C#, Go, with cloud deployment and AI tooling experience. Cisco CCNA & Microsoft Copilot certified. Explore my projects, experience, and get in touch." />
     <meta name="keywords"
@@ -52,6 +52,14 @@
           content="Explore the portfolio of Marc Awad, Full-Stack Developer. Projects built with React, Vue.js, TypeScript, Supabase & Vercel." />
     <meta property="og:image"
           content="https://marcawad.vercel.app/images/og-preview.webp" />
+    <meta property="og:image:type"
+          content="image/webp" />
+    <meta property="og:image:width"
+          content="1200" />
+    <meta property="og:image:height"
+          content="630" />
+    <meta property="og:image:alt"
+          content="Marc Awad — Full-Stack Developer portfolio" />
     <meta property="og:locale"
           content="en_US" />
     <meta property="og:locale:alternate"
@@ -66,6 +74,8 @@
           content="Explore the portfolio of Marc Awad, Full-Stack Developer. Projects built with React, Vue.js, TypeScript, Supabase & Vercel." />
     <meta name="twitter:image"
           content="https://marcawad.vercel.app/images/og-preview.webp" />
+    <meta name="twitter:image:alt"
+          content="Marc Awad — Full-Stack Developer portfolio" />
 
     <!-- Adaptive favicons (iOS, Android, browsers) -->
     <link rel="icon"
@@ -79,21 +89,22 @@
     <meta name="theme-color"
           content="#1b1f22" />
 
-    <!-- Preconnect for performance -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com" />
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin />
-
     <!-- Preload critical resources -->
     <link rel="preload"
           as="image"
           href="images/bg.webp" />
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/assets/webfonts/source-sans-pro-300-normal-latin.woff2"
+          crossorigin />
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/assets/webfonts/source-sans-pro-600-normal-latin.woff2"
+          crossorigin />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600&display=swap" />
+    <!-- Stylesheets (Source Sans Pro is self-hosted, declared in main.css) -->
     <link rel="stylesheet"
           href="assets/css/main.css" />
     <noscript>
@@ -256,12 +267,20 @@
 </head>
 
 <body class="is-preload">
-    <div class="language-switcher">
+    <a class="skip-link"
+       href="#primary-navigation">Skip to navigation</a>
+    <nav class="language-switcher"
+         aria-label="Language">
         <a href="index.html"
-           class="lang-btn active">EN</a>
+           class="lang-btn active"
+           hreflang="en"
+           lang="en"
+           aria-current="page">EN</a>
         <a href="fr.html"
-           class="lang-btn">FR</a>
-    </div>
+           class="lang-btn"
+           hreflang="fr"
+           lang="fr">FR</a>
+    </nav>
     <!-- Wrapper -->
     <div id="wrapper">
         <header id="header">
@@ -289,7 +308,9 @@
             </div>
 
             <!-- Navigation -->
-            <nav>
+            <nav id="primary-navigation"
+                 aria-label="Main"
+                 tabindex="-1">
                 <ul class="heavy-weight">
                     <li><a href="#about">Who I am</a></li>
                     <li><a href="#skills">What I can do</a></li>
@@ -460,12 +481,16 @@
                     <!-- Indicators -->
                     <div class="carousel-indicators">
                         <button class="indicator active"
+                                type="button"
                                 data-slide="0"
+                                aria-current="true"
                                 aria-label="Go to project 1"></button>
                         <button class="indicator"
+                                type="button"
                                 data-slide="1"
                                 aria-label="Go to project 2"></button>
                         <button class="indicator"
+                                type="button"
                                 data-slide="2"
                                 aria-label="Go to project 3"></button>
                     </div>

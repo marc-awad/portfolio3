@@ -12,7 +12,7 @@
           content="width=device-width, initial-scale=1" />
 
     <!-- SEO Meta Tags -->
-    <title>Marc Awad | Développeur Full-Stack – Portfolio, Projets & Contact</title>
+    <title>Marc Awad | Développeur Full-Stack – Portfolio, Projets &amp; Contact</title>
     <meta name="description"
           content="Portfolio de Marc Awad, Développeur Full-Stack spécialisé en React, Vue.js, TypeScript, C#, Go, avec une expertise en déploiement cloud et tooling IA. Certifié Cisco CCNA &amp; Microsoft Copilot. Découvrez mes projets, mon parcours et contactez-moi." />
     <meta name="keywords"
@@ -52,6 +52,14 @@
           content="Découvrez le portfolio de Marc Awad, Développeur Full-Stack. Projets réalisés avec React, Vue.js, TypeScript, Supabase & Vercel." />
     <meta property="og:image"
           content="https://marcawad.vercel.app/images/og-preview.webp" />
+    <meta property="og:image:type"
+          content="image/webp" />
+    <meta property="og:image:width"
+          content="1200" />
+    <meta property="og:image:height"
+          content="630" />
+    <meta property="og:image:alt"
+          content="Marc Awad — Développeur Full-Stack, portfolio" />
     <meta property="og:locale"
           content="fr_FR" />
     <meta property="og:locale:alternate"
@@ -66,6 +74,8 @@
           content="Découvrez le portfolio de Marc Awad, Développeur Full-Stack. Projets réalisés avec React, Vue.js, TypeScript, Supabase & Vercel." />
     <meta name="twitter:image"
           content="https://marcawad.vercel.app/images/og-preview.webp" />
+    <meta name="twitter:image:alt"
+          content="Marc Awad — Développeur Full-Stack, portfolio" />
 
     <!-- Adaptive favicons (iOS, Android, navigateurs) -->
     <link rel="icon"
@@ -79,21 +89,22 @@
     <meta name="theme-color"
           content="#1b1f22" />
 
-    <!-- Preconnect pour la performance -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com" />
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin />
-
     <!-- Preload des ressources critiques -->
     <link rel="preload"
           as="image"
           href="images/bg.webp" />
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/assets/webfonts/source-sans-pro-300-normal-latin.woff2"
+          crossorigin />
+    <link rel="preload"
+          as="font"
+          type="font/woff2"
+          href="/assets/webfonts/source-sans-pro-600-normal-latin.woff2"
+          crossorigin />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600&display=swap" />
+    <!-- Stylesheets (Source Sans Pro auto-hébergé, déclaré dans main.css) -->
     <link rel="stylesheet"
           href="assets/css/main.css" />
     <noscript>
@@ -256,14 +267,22 @@
 </head>
 
 <body class="is-preload">
+    <a class="skip-link"
+       href="#primary-navigation">Aller à la navigation</a>
 
     <!-- Sélecteur de langue -->
-    <div class="language-switcher">
+    <nav class="language-switcher"
+         aria-label="Langue">
         <a href="index.html"
-           class="lang-btn">EN</a>
+           class="lang-btn"
+           hreflang="en"
+           lang="en">EN</a>
         <a href="fr.html"
-           class="lang-btn active">FR</a>
-    </div>
+           class="lang-btn active"
+           hreflang="fr"
+           lang="fr"
+           aria-current="page">FR</a>
+    </nav>
 
     <!-- Wrapper -->
     <div id="wrapper">
@@ -292,7 +311,9 @@
             </div>
 
             <!-- Navigation -->
-            <nav>
+            <nav id="primary-navigation"
+                 aria-label="Principale"
+                 tabindex="-1">
                 <ul class="heavy-weight">
                     <li><a href="#about">Qui je suis</a></li>
                     <li><a href="#skills">Ce que je sais faire</a></li>
@@ -466,12 +487,16 @@
                     <!-- Indicators -->
                     <div class="carousel-indicators">
                         <button class="indicator active"
+                                type="button"
                                 data-slide="0"
+                                aria-current="true"
                                 aria-label="Aller au projet 1"></button>
                         <button class="indicator"
+                                type="button"
                                 data-slide="1"
                                 aria-label="Aller au projet 2"></button>
                         <button class="indicator"
+                                type="button"
                                 data-slide="2"
                                 aria-label="Aller au projet 3"></button>
                     </div>
